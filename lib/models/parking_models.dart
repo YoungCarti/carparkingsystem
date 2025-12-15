@@ -5,11 +5,15 @@ class ParkingLocation {
   final String name;
   // Distance removed as per requirement
   final String status; // "Available", "Limited", "Full"
+  final int floors;
+  final int slotsPerFloor;
 
   ParkingLocation({
     required this.id,
     required this.name,
     required this.status,
+    this.floors = 1,
+    this.slotsPerFloor = 4,
   });
 }
 
@@ -32,8 +36,8 @@ enum SlotStatus {
 }
 
 // Dummy Data
-final List<ParkingLocation> dummyLocations = [
-  ParkingLocation(id: '1', name: 'Menara BAC', status: 'Available'),
+List<ParkingLocation> dummyLocations = [
+  ParkingLocation(id: '1', name: 'Menara BAC', status: 'Available', floors: 3, slotsPerFloor: 4),
 ];
 
 final List<ParkingSlot> dummySlots = [

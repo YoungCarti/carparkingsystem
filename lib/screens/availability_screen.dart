@@ -12,7 +12,7 @@ class AvailabilityScreen extends StatefulWidget {
 }
 
 class _AvailabilityScreenState extends State<AvailabilityScreen> {
-  String _selectedZone = 'Zone A';
+  String _selectedZone = 'Level 1';
   ParkingSlot? _selectedSlot;
 
   @override
@@ -72,7 +72,7 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
   }
 
   Widget _buildZoneSelector() {
-    final zones = ['Zone A'];
+    final zones = ['Level 1', 'Level 2', 'Level 3'];
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -148,7 +148,11 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          _selectedSlot = slot;
+          if (_selectedSlot == slot) {
+            _selectedSlot = null;
+          } else {
+            _selectedSlot = slot;
+          }
         });
       },
       child: Container(
@@ -213,8 +217,8 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
               }
             : null,
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF212121), // Dark button
-          foregroundColor: const Color(0xFFB2FF59), // Green text/icon
+          backgroundColor: Colors.blue, // Blue button
+          foregroundColor: Colors.white, // White text/icon
           padding: const EdgeInsets.symmetric(vertical: 20),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),

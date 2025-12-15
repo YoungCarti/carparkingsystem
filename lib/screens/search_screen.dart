@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/parking_models.dart';
 import 'availability_screen.dart';
+import '../admin/admin_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -67,6 +68,15 @@ class _SearchScreenState extends State<SearchScreen> {
                   );
                 },
               ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AdminScreen()),
+                );
+              },
+              child: const Text('Admin Access'),
             ),
           ],
         ),
