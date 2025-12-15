@@ -122,7 +122,7 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
                height: 50,
                width: 120,
                decoration: BoxDecoration(
-                 color: const Color(0xFFB2FF59), // Light Green Car
+                 color: Colors.red, // Red Car
                  borderRadius: BorderRadius.circular(12),
                  boxShadow: [
                    BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 4, offset: const Offset(0, 2)),
