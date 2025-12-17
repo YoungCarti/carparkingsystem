@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/parking_models.dart';
-import 'reservation_screen.dart';
+import 'proceed_to_parking_screen.dart';
 
 class AvailabilityScreen extends StatefulWidget {
   final ParkingLocation location;
@@ -208,9 +208,10 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ReservationScreen(
+                    builder: (context) => ProceedToParkingScreen(
                       location: widget.location,
                       slot: _selectedSlot!,
+                      zone: _selectedZone,
                     ),
                   ),
                 );
